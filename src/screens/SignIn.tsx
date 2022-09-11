@@ -27,6 +27,8 @@ export function SignIn() {
 
         await signInWithEmailAndPassword(auth, email, password)
         .catch((error) => {
+
+            console.log(error)
             setIsLoading(false)
 
             if(error.code === "auth/wrong-password" || error.code === "auth/invalid-email") {
